@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+
+    <body>
+      <div class="title">
+        <h1><center>Employee Registraion Page</center></h1>
+      </div>
+      <center>
+        <form name="registrationForm" action="/register" method="post">
+          <div>
+            employee id
+            <input type="text" name="empid" />
+          </div>
+          <div>
+            employee name
+            <input type="text" name="empname" />
+          </div>
+          <div>
+            designation
+            <input type="text" name="designation" />
+          </div>
+          <div>
+            contact number
+            <input
+              type="tel"
+              name="contact_number"
+              required
+              pattern="[0-9]{10}"
+            />
+          </div>
+          <div>
+            email
+            <input
+              type="email"
+              name="email"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
+            />
+          </div>
+          <div>
+            role
+            <input type="text" name="role" />
+          </div>
+          <div>
+            <input type="submit" value="register" />
+          </div>
+        </form>
+      </center>
+      <%- include("partials/footer.ejs") %>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+
+    <body>
+      <center><h1 class="title">login page</h1></center>
+      <div class="table">
+        <center>
+          <form action="/login" method="post">
+            <div class="label">
+              employee id
+              <input type="text" name="empid" class="textfield" />
+            </div>
+            <div class="label">
+              password
+              <input type="password" name="password" class="textfield" />
+            </div>
+
+            <div class="submit">
+              <input type="submit" value="login" />
+            </div>
+          </form>
+        </center>
+      </div>
+      <div class="spread">
+        <%if(locals.spread){%>
+        <h1 class="title"><%=spread%></h1>
+        <%}else{%>
+        <h1>enter the credentials</h1>
+        <%}%>
+      </div>
+    </body>
+  </head>
+</html>

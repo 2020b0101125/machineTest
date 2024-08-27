@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+
+  <body style="background-color:antiquewhite ;">
+    <div class="table_user">
+      <table>
+        <% if(locals.data){ %> <% console.log(data) %>
+        <tr>
+          <td>id</td>
+          <td><%=data.id %></td>
+        </tr>
+        <tr>
+          <td>empid</td>
+          <td><%=data.empid %></td>
+        </tr>
+        <tr>
+          <td>emp_name</td>
+          <td><%=data.emp_name %></td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><%=data.email %></td>
+        </tr>
+        <tr>
+          <td>contact_no</td>
+          <td><%=data.contact_no %></td>
+        </tr>
+        <tr>
+          <td>date created on</td>
+          <td><%=data.created_on %></td>
+        </tr>
+        <p><%=data.post %></p>
+        <% } else if(locals.error){%> <%= error %> <%}%>
+      </table>
+    </div>
+
+    <a href="http://localhost:3000/admin-list">list</a>
+    <a href="http://localhost:3000/register">create user</a>
+    <a href="http://localhost:3000/edit-user">edit</a>
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

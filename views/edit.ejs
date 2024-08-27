@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1><center>Edit Employee Data</center></h1>
+    </div>
+    <center>
+      <form action="/ " method="post">
+        <div class="label">
+          <div class="i">id</div>
+          <input type="text" class="textfield" required />
+        </div>
+        <div class="label">
+          emp id
+          <input type="text" class="textfield" name="empid" required />
+        </div>
+        <div class="label">
+          employee name
+          <input type="text" class="textfield" name="emp_name" required />
+        </div>
+        <div class="label">
+          designation id
+          <input
+            type="text"
+            class="textfield"
+            placeholder="enter only existing values"
+            name="designation_id"
+            required
+          />
+        </div>
+        <div class="label">
+          contact number
+          <input
+            type="tel"
+            name="contact_no"
+            class="textfield"
+            required
+            pattern="[0-9]{10}"
+          />
+        </div>
+        <div class="label">
+          email
+          <input
+            type="text"
+            class="textfield"
+            name="email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
+          />
+        </div>
+        <div class="label" required>
+          role
+          <input
+            name="role"
+            type="text"
+            class="textfield"
+            required
+            placeholder="enter only existing values"
+          />
+        </div>
+        <div class="label">
+          status
+          <input
+            type="text"
+            name="status"
+            data-allowed-value="true,false"
+            class="textfield"
+            required
+          />
+        </div>
+        <div class="label">
+          password
+          <input type="password" name="password" class="textfield" />
+        </div>
+        <div class="submit">
+          <input type="submit" value="submit" />
+        </div>
+      </form>
+    </center>
+  </body>
+</html>
