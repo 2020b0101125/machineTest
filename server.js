@@ -187,7 +187,7 @@ app.post("/login", (req, res) => {
       res.redirect("/login");
     }
     if (ans.password === req.body["password"]) {
-      console.log(ans);
+      console.log("post-login", ans);
       res.redirect(`/user-details/${ans.id}`);
     }
   });
@@ -195,18 +195,28 @@ app.post("/login", (req, res) => {
 
 app.post("/edit-user", (req, res) => {
   console.log("ass");
-  const chk =
-    "UPDATE TABLE user-details SET empid=$1,emp_name=$2,designation_id=$3,contact_no=$4, email=$5,role=$6,status=$7,password=$8 where id=$9 ;";
+  chk = `UPDATE  user_details SET empid=$1,emp_name=$2,designation_id=$3,contact_no=$4, email=$5,role=$6,status=$7,password=$8 where id=$9 ;`;
+  const empid = req.body["empid"];
+  const empname = req.body["emp_name"];
+  const designation_id = req.body["designation_id"];
+  const email = req.body["email"];
+  const contact_no = req.body["contact_no"];
+  const role = req.body["role"];
+  const status = req.body["status"];
+  const password = req.body["password"];
+  const id = req.body["id"];
   const val = [
-    req.body.empid,
-    req.body.emp_name,
-    req.body.designation_id.req.body.contact_no,
-    req.body.email,
-    req.body.role,
-    req.body.status,
-    req.body.password,
-    req.body.id,
+    empid,
+    empname,
+    designation_id,
+    email,
+    contact_no,
+    role,
+    status,
+    password,
+    id,
   ];
+
   client
     .query(chk, val)
     .then(() => {
@@ -215,9 +225,9 @@ app.post("/edit-user", (req, res) => {
     .catch((err) => {
       console.error("error in updating", err.stack);
     });
-  res.redirect("/home");
+  res.redirect("/edit-user");
 });
 
 app.listen(port, () => {
-  console.log("listening");
+  console.log("listening at port 3000");
 });
